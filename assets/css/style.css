@@ -1,0 +1,62 @@
+body {
+    background: url('https://images.pexels.com/photos/264501/pexels-photo-264501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    font-family: 'Shrikhand', cursive;
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+
+}   
+
+.navbar-brand {
+    margin: 0 auto;
+    color: #212529;
+    font-family: 'Shrikhand', cursive;
+    font-size: 90px;
+    text-shadow:
+    -5px -5px 0 #ffd700,
+    5px -5px 0 #ffd700,
+    -5px 5px 0 #ffd700,
+    5px 5px 0 #ffd700;
+}
+
+.container {
+    margin-top: 130px;
+    text-align: center;
+}
+
+#second {
+    margin-top: 50px;
+}
+
+h3 {
+    background-color: #ffd700;
+    border-radius: 20px;
+}
+
+#livesLeft{
+    font-size: 120px;
+    color: #ffd700;
+    text-shadow: 
+    -3px -3px 0 black,
+    3px -3px 0 black,
+    -3px 3px 0 black,
+    3px 3px 0 black;
+}
+
+p {
+    font-size: 30px;
+}
+
+h2 {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
