@@ -43,6 +43,7 @@ document.onkeyup = function (event) {
         for (var n = 0; n < randWord.length; n++) {
             if (wrongGuesses[n] === userGuess) {
                 alert('You already guessed that, try again!');
+                return;
             }
         }
 
@@ -78,12 +79,13 @@ document.onkeyup = function (event) {
         if (answerCorrect === false && userGuess !== " ") { // If guess is wrong, lives go down 1, push into wrongGuesses
             lives--;
             wrongGuesses.push(userGuess);
+            document.getElementById('guesses').innerHTML = wrongGuesses;
         }
     }
 
         
         document.getElementById('livesLeft').innerHTML = lives;
-        document.getElementById('guesses').innerHTML = wrongGuesses;
+
 
 
     }
