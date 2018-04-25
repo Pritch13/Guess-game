@@ -22,6 +22,9 @@ var lives = 7;
 // Wrong guesses
 var wrongGuesses = [];
 
+// Right gusses
+var rightGuesses = [];
+
 // On key up
 document.onkeyup = function (event) {
 
@@ -29,10 +32,13 @@ document.onkeyup = function (event) {
 
     var answerCorrect = false;
 
+    document.getElementById('section').innerHTML = answerArray;
+
     for (var i = 0; i < randWord.length; i++) {     // Converts correct guess into letter from underscore
         if (userGuess === randWord[i]) {
             answerArray[i] = userGuess;
             answerCorrect = true;
+            rightGuesses.push(userGuess);
         }
     }
 
@@ -43,14 +49,16 @@ document.onkeyup = function (event) {
 
     if (lives === 0) {
         document.getElementById('title').innerHTML = 'Game over!';  // If lives hit 0, game over displayed
+        document.getElementById('guesses').style.display = "none";
+        document.getElementById('livesLeft').style.display = "none";
+        document.getElementById('section').innerHTML = 'Refresh the page to play again!';
     }
 
-    
 
-
-    document.getElementById('section').innerHTML = answerArray;
     document.getElementById('livesLeft').innerHTML = lives;
     document.getElementById('guesses').innerHTML = wrongGuesses;
+
+
 }
 
 
@@ -59,6 +67,6 @@ document.onkeyup = function (event) {
 // }
 
 
-// if (wrong guess had already been picked) {
-//  dont let them pick it again
+// if (wrong guess has already been picked) {
+//  dont let them pick it 
 // }
