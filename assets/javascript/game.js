@@ -25,6 +25,7 @@ var wrongGuesses = [];
 // Right gusses
 var rightGuesses = [];
 
+
 // Score
 var score = 0;
 
@@ -35,7 +36,16 @@ document.onkeyup = function (event) {
 
     var answerCorrect = false;
 
+
+
     if (userPossibleGuess.indexOf(userGuess) > -1) {           // Only registers key up if its a letter
+        
+        for (var n = 0; n < randWord.length; n++) {
+            if (wrongGuesses[n] === userGuess) {
+                alert('You already guessed that, try again!');
+            }
+        }
+
 
         for (var i = 0; i < randWord.length; i++) {     // Converts correct guess into letter from underscore
             if (userGuess === randWord[i]) {
@@ -49,7 +59,7 @@ document.onkeyup = function (event) {
         document.getElementById('section').innerHTML = answerArray;
 
         if (score === randWord.length) {
-            document.getElementById('title').innerHTML = 'You Win!';    // If word guessed correctly you win and content hidden
+            document.getElementById('title').innerHTML = 'You Win!';    // If word guessed correctl you win and content hidden
             document.getElementById('guesses').style.display = "none";
             document.getElementById('livesLeft').style.display = "none";
             document.getElementById('section').innerHTML = 'Refresh the page to play again!';
@@ -63,14 +73,13 @@ document.onkeyup = function (event) {
         }
 
 
-        if (answerCorrect === false && userGuess !== " ") { // If guess is wrong, lives go down 1
+    if (wrongGuesses.indexOf(userGuess) < 1) {
+
+        if (answerCorrect === false && userGuess !== " ") { // If guess is wrong, lives go down 1, push into wrongGuesses
             lives--;
             wrongGuesses.push(userGuess);
         }
-
-        // if (wrongGuesses.indexOf(userGuess) > -1) {
-            
-        // }
+    }
 
         
         document.getElementById('livesLeft').innerHTML = lives;
@@ -82,15 +91,13 @@ document.onkeyup = function (event) {
 
 
 
-// if (wrong guess has already been picked) {
-//  dont let them pick it 
+// if (userGuess is in wrong guesses) {
+//    
 // }
 
 
-
-// if (userPossibleGuess.indexOf(userGuess) > -1) {
-//     alert('works')
-//  }
-
-
-
+// for (var n = 0; n < randWord.length; n++) {
+//  (if wrongGuesses[n] === userGuess){
+//    alert('You already guessed that, try again!')
+//  } else {}
+//}
