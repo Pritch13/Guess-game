@@ -41,7 +41,7 @@ document.onkeyup = function (event) {
     if (userPossibleGuess.indexOf(userGuess) > -1) {           // Only registers key up if its a letter
         
         for (var n = 0; n < randWord.length; n++) {
-            if (wrongGuesses[n] === userGuess) {
+            if (wrongGuesses[n] === userGuess || rightGuesses[n] === userGuess) {
                 alert('You already guessed that, try again!');
                 return;
             }
@@ -59,6 +59,7 @@ document.onkeyup = function (event) {
 
         document.getElementById('section').innerHTML = answerArray;
 
+        
         if (score === randWord.length) {
             document.getElementById('title').innerHTML = 'You Win!';    // If word guessed correctl you win and content hidden
             document.getElementById('guesses').style.display = "none";
@@ -93,13 +94,3 @@ document.onkeyup = function (event) {
 
 
 
-// if (userGuess is in wrong guesses) {
-//    
-// }
-
-
-// for (var n = 0; n < randWord.length; n++) {
-//  (if wrongGuesses[n] === userGuess){
-//    alert('You already guessed that, try again!')
-//  } else {}
-//}
