@@ -36,10 +36,13 @@ document.onkeyup = function (event) {
 
     var answerCorrect = false;
 
-
+    document.getElementById("section").classList.remove("h2");
 
     if (userPossibleGuess.indexOf(userGuess) > -1) {           // Only registers key up if its a letter
-        
+
+
+
+
         for (var n = 0; n < randWord.length; n++) {
             if (wrongGuesses[n] === userGuess || rightGuesses[n] === userGuess) {
                 alert('You already guessed that, try again!');

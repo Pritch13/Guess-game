@@ -51,7 +51,7 @@ p {
     font-size: 30px;
 }
 
-h2 {
+.h2 {
     animation: blinker 1.5s linear infinite;
   }
   
